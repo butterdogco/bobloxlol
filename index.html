@@ -4,6 +4,10 @@
     <title>Roblox - Web Client</title>
     <link rel="shortcut icon" href="roblox.png">
     <style>
+      @font-face {
+        font-family: 'GothamSSm', sans-serif;
+        src: url(GothamSSm-Bold.ttf);
+      }
       @keyframes fade {
         0% { opacity: 0%; }
         100% { opacity: 100%; }
@@ -22,9 +26,11 @@
         width: 100vw;
         color: white;
         background-position: center;
+        font-family: 'GothamSSm', sans-serif;
       }
       .main {
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         width: 100vw;
         height: 100vh;
         margin: 0;
