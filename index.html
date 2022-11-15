@@ -2,12 +2,8 @@
 <html>
   <head>
     <title>Roblox - Web Client</title>
-    <link rel="shortcut icon" href="roblox.png">
+    <link rel="shortcut icon" href="https://butterdogco.com/bobloxlol/roblox.png">
     <style>
-      @font-face {
-        font-family: 'GothamSSm', sans-serif;
-        src: url(GothamSSm-Bold.ttf);
-      }
       @keyframes fade {
         0% { opacity: 0%; }
         100% { opacity: 100%; }
@@ -17,7 +13,7 @@
         100% { opacity: 0%; }
       }
       body {
-        background-image: url(roblox-thing.png);
+        background-image: url('https://butterdogco.com/bobloxlol/roblox-thing.png');
         margin: 0;
         z-index: 0;
         background-repeat: no-repeat;
@@ -25,12 +21,10 @@
         height: 100vh;
         width: 100vw;
         color: white;
-        background-position: bottom;
-        font-family: 'GothamSSm', sans-serif;
+        background-position: center;
       }
       .main {
         backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
         width: 100vw;
         height: 100vh;
         margin: 0;
@@ -61,16 +55,16 @@
       }
       
       h1 {
-        display: fixed;
+        position: fixed;
         margin-top: 400px;
-        margin-left: -130px;
+        margin-left: 0px;
         cursor: default;
       }
       
       p {
-        display: fixed;
+        position: static;
         margin-top: 450px;
-        margin-left: -160px;
+        margin-left: 0px;
         cursor: default;
       }
       
@@ -97,18 +91,30 @@
   </head>
   <body>
     <div class="main" id="main">
-      <img src="roblox.png" class="logo">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/d/d6/Roblox_app_icon_2022.svg/revision/latest/scale-to-width-down/250?cb=20220319140506" class="logo">
       <div class="loading"></div>
       <h1>Loading Web Client</h1>
-      <p>beta</p>
+      <p id="main-text">beta</p>
     </div>
-    <iframe id="game" src="https://roblox.com.kz/discovery#/"></iframe>
+    <iframe id="game" src="roblox.html"></iframe>
     <script>
       function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }
       
       async function test() {
+        await delay(1000);
+        document.getElementById('main-text').innerHTML = "waiting for server";
+        await delay(1000);
+        document.getElementById('main-text').innerHTML = "connecting to desktop";
+        await delay(1000);
+        document.getElementById('main-text').innerHTML = "loading save";
+        await delay(500);
+        document.getElementById('main-text').innerHTML = "installing roblox";
+        await delay(300);
+        document.getElementById('main-text').innerHTML = "waiting";
+        await delay(2300);
+        document.getElementById('main-text').innerHTML = "done!";
         await delay(3000);
         document.getElementById('main').style.animation = "fadeOut 1s linear";
         await delay(1000);
@@ -118,11 +124,13 @@
         document.body.style.background = "black";
         await delay(1000);
         document.getElementById('main').style.display = "flex";
+        document.getElementById('main-text').innerHTML = "optimizing performance";
         await delay(1200)
         document.getElementById('main').style.display = "none";
         await delay(100)
         document.body.style.background = "white";
         document.getElementById('game').style.display = "block";
+        //window.open('chrome-extension://oooiobdokpcfdlahlmcddobejikcmkfo/');
       }
       
       test();
